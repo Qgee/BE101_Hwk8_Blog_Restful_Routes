@@ -1,0 +1,14 @@
+<h1> These are all the post titles </h1>
+
+<%= flash[:notice] if flash[:notice] %>
+<%= flash[:alert] if flash[:alert] %>
+ 
+<ul>
+	<% @posts.each do |post|  %>
+		<li> <%= post.title %> &ndash;
+			 <%= link_to("Delete", post_path(post.id), method: :delete) %>
+		</li>
+
+	<% end %>
+ 
+</ul>
