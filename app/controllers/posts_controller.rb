@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all
+		@post = Post
 	end
 
 	def show
@@ -28,6 +29,10 @@ class PostsController < ApplicationController
 		end
 
 		return redirect_to(posts_path)
+	end
+
+	def new
+		@post = Post
 	end
 
 end

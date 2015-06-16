@@ -16,10 +16,23 @@
 <br><br><br>
 
 <h3>  Add a new post here  </h3>
-<form method="POST" action="/posts">
+<%= form_for @post do |f|		%>
+	<%=  	f.label :title 		%>:
+	<%= 	f.text_field :title %><br />
+
+	<%=		f.label :post 		%>:
+	<%=		f.text_field :post 	%><br />
+
+	<%=		f.submit  			%>
+<% end %>
+
+<!-- *************************************************************
+***THIS CODE IS THROWING A CSRF TOKEN AUTHENTICITY ERROR ****
+*************************************************************
+ --><!-- <form method="POST" action="/posts">
 	<label for="Title">Title</label>
 	<input type="string" name="title" id="title_box"><br><br>
 	<label for="Post">Post</label>
 	<input type="string" name="post" id="post_box">
 	<input type="submit">
-</form>
+</form> -->
