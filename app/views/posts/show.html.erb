@@ -1,11 +1,15 @@
+<%= flash[:notice] if flash[:notice] %>
+<%= flash[:alert] if flash[:alert] %>
+
+
 <h1> This is your new post. </h1>
 
 <ul>
 	
-	<% @posts.each do |post| %>
-		<li> <%= post.title %>: <br>
-			<%= post.post %> 
-		</li>
-	<% end %>
- 
+	<li> <%= @post.title %>: <br>
+		 <%= @post.post %> 
+	</li>
+	
 </ul>
+
+<%= button_to("Back", posts_path, method: :get) %>

@@ -5,7 +5,9 @@
  
 <ul>
 	<% @posts.each do |post|  %>
-		<li> <%= post.title %> &ndash;
+		<% title = post.title %>
+
+		<li> <%= link_to(title, post_path(post),method: :get) %> &ndash;
 			 <%= link_to("Delete", post_path(post.id), method: :delete) %>
 		</li>
 
